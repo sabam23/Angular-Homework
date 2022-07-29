@@ -30,6 +30,10 @@
       <br>
       <input formControlName="website">
     </label>
-    <button [disabled]="forms.controls['password'].value !== forms.controls['confirmPassword'].value" (click)="onClick()">Register</button>
+    <label>
+      <input type="checkbox" formControlName="checkbox">
+      I have read the agreement
+    </label>
+    <button [disabled]="forms.invalid" (click)="onClick()">Register</button>
   </form>
 </div>

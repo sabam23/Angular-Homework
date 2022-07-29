@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
+import {passwordValidator} from "../password-validator";
 
 
 @Component({
@@ -23,8 +24,8 @@ export class FormComponent implements OnInit {
       website: new FormControl('', [Validators.required,
         Validators.pattern("(https?:\\/\\/)?(www\\.)[-a-zA-Z0-9@:%._\\+~#=]{2,256}\\.[a-z]{2,4}\\b([-a-zA-Z0-9@:%_\\+.~#?&//=]*)|(https?:\\/\\/)?(www\\.)?(?!ww)[-a-zA-Z0-9@:%._\\+~#=]{2,256}\\.[a-z]{2,4}\\b([-a-zA-Z0-9@:%_\\+.~#?&//=]*)")
       ]),
-      // checkbox: new FormControl('', [Validators.required])
-    })
+      checkbox: new FormControl('', [ Validators.requiredTrue])
+    }, {validators: passwordValidator})
   }
 
   public onClick(): void {

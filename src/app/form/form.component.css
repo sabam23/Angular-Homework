@@ -12,11 +12,12 @@
   font-weight: 500;
   font-size: 16px;
 }
-.form-container > form input {
+.form-container > form input:not([type=checkbox]) {
   width: 400px;
   height: 35px;
   border: solid #dfdfdf 2px;
   border-radius: 3px;
+  padding-left: 10px;
 }
 .form-container > form > button {
   background: #1890ff;
@@ -25,6 +26,9 @@
   width: 100px;
   height: 40px;
   color: white;
+}
+.form-container > form > button:disabled {
+  background: #dfdfdf;
 }
 
 /*# sourceMappingURL=form.component.css.map */
