@@ -1,0 +1,30 @@
+.form-container {
+  margin: auto;
+  width: 700px;
+
+  & > form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+    font-weight: 500;
+    font-size: 16px;
+    &  input {
+      width: 400px;
+      height: 35px;
+      border: solid #dfdfdf 2px;
+      border-radius: 3px;
+    }
+
+    & > button {
+      background: #1890ff;
+      border: none;
+      border-radius: 4px;
+      width: 100px;
+      height: 40px;
+      color: white;
+    }
+  }
+}

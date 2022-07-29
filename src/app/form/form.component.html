@@ -1,3 +1,35 @@
-<form>
-
-</form>
+<div class="form-container">
+  <form [formGroup]="forms">
+    <label>
+      E-mail:
+      <br>
+      <input formControlName="email" id="email" type="email">
+    </label>
+    <label>
+      Password:
+      <br>
+      <input formControlName="password" type="password">
+    </label>
+    <label>
+      Confirm Password:
+      <br>
+      <input formControlName="confirmPassword" type="password">
+    </label>
+    <label>
+      Nickname:
+      <br>
+      <input formControlName="nickname">
+    </label>
+    <label>
+      Phone:
+      <br>
+      <input formControlName="phone">
+    </label>
+    <label>
+      Website:
+      <br>
+      <input formControlName="website">
+    </label>
+    <button [disabled]="forms.controls['password'].value !== forms.controls['confirmPassword'].value" (click)="onClick()">Register</button>
+  </form>
+</div>
