@@ -37,3 +37,23 @@
     <button [disabled]="forms.invalid" (click)="onClick()">Register</button>
   </form>
 </div>
+
+<table class="users">
+  <tr>
+    <th>Email</th>
+    <th>Password</th>
+    <th>Nickname</th>
+    <th>Phone</th>
+    <th>Website</th>
+  </tr>
+
+    <ng-container *ngFor="let user of users">
+      <tr>
+        <td>{{user.email}}</td>
+        <td>{{user.password}}</td>
+        <td>{{user.nickname}}</td>
+        <td>{{user.phone}}</td>
+       <td>{{user.website}}</td>
+      </tr>
+    </ng-container>
+</table>

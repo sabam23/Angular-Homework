@@ -31,4 +31,21 @@
   background: #dfdfdf;
 }
 
+.users {
+  width: 1300px;
+  border: solid black 1px;
+  margin: 50px auto;
+  border-collapse: collapse;
+  text-align: center;
+  background: #373535;
+  color: white;
+}
+.users td, .users tr, .users th {
+  border: solid black 1px;
+  font-family: monospace;
+  font-size: 16px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 /*# sourceMappingURL=form.component.css.map */
