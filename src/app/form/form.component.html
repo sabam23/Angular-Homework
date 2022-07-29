@@ -37,7 +37,7 @@
     <button [disabled]="forms.invalid" (click)="onClick()">Register</button>
   </form>
 </div>
-<table class="users">
+<table class="users" *ngIf="users.length">
   <tr>
     <th>Email</th>
     <th>Password</th>
