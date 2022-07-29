@@ -30,6 +30,9 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public remove(index: any): void {
+    this.users.splice(index,1);
+  }
 
   public onClick(): void {
     this.users.push(this.forms.value);

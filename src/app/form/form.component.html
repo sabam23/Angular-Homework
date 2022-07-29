@@ -37,7 +37,6 @@
     <button [disabled]="forms.invalid" (click)="onClick()">Register</button>
   </form>
 </div>
-
 <table class="users">
   <tr>
     <th>Email</th>
@@ -54,6 +53,8 @@
         <td>{{user.nickname}}</td>
         <td>{{user.phone}}</td>
        <td>{{user.website}}</td>
+        <td><button class="editBtn" >Edit</button><button class="removeBtn" (click)="remove(users.indexOf(user))" >Remove</button></td>
       </tr>
+
     </ng-container>
 </table>
