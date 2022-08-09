@@ -3,22 +3,25 @@
     <label>
       Currency:
       <br>
-      <input type="text" formControlName="currency1">
+      <input type="text" formControlName="currency1" oninput="this.value = this.value.toUpperCase()">
     </label>
     <label>
-      Value:
+      Amount:
       <br>
-      <input type="text" formControlName="value1">
+      <input type="text" formControlName="value1" (keypress)="keyPressNumbersWithDecimal($event)">
     </label>
     <label>
       Currency:
       <br>
-      <input type="text" formControlName="currency2">
+      <input type="text" formControlName="currency2" oninput="this.value = this.value.toUpperCase()">
     </label>
     <label>
-      Value:
+      Amount:
       <br>
-      <input type="text" formControlName="value2">
+      <input type="text" formControlName="value2" (keypress)="keyPressNumbersWithDecimal($event)">
     </label>
+    <br>
+    <br>
+    <div *ngIf="err">Invalid Currency index!</div>
   </form>
 </div>
