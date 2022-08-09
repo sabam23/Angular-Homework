@@ -10,7 +10,6 @@ import {of} from "rxjs";
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
-  // forms: FormGroup<any> = new FormGroup('');
   forms = new FormGroup({
     email: new FormControl('',[Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required, Validators.pattern("[A-Za-z0-9]+"), Validators.minLength(7)]),
@@ -25,6 +24,8 @@ export class FormComponent implements OnInit {
     checkbox: new FormControl('', [ Validators.requiredTrue])
   }, {validators: passwordValidator});
   users: any = [];
+  checker = true;
+  checkerV = false;
   constructor() { }
 
   ngOnInit(): void {
@@ -32,6 +33,21 @@ export class FormComponent implements OnInit {
 
   public remove(index: any): void {
     this.users.splice(index,1);
+  }
+
+  public edit(index: any): void {
+    this.checker = false;
+    this.checkerV =true;
+    for (let i in this.users[index]) {
+      if (this.users[index][i] === '') {
+        this.users[index] = this.forms.value;
+      }
+    }
+    this.update();
+  }
+
+  public update() {
+
   }
 
   public onClick(): void {

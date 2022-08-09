@@ -1,0 +1,38 @@
+.converter-container {
+  width: 500px;
+  height: 450px;
+  border-radius: 7px;
+  margin: 50px auto;
+  background-color: #373535;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.converter-container > form {
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+  font-family: monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 15px;
+}
+.converter-container input {
+  margin-top: 4px;
+  width: 120px;
+  height: 30px;
+  border: solid gray 1px;
+  border-radius: 3px;
+  outline: none;
+  text-align: center;
+  font-size: 17px;
+  font-family: monospace;
+  background-color: #e3e3e3;
+  color: #373535;
+}
+.converter-container input:focus {
+  border: #3acc3a solid 2px;
+}
+
+/*# sourceMappingURL=currency-converter.component.css.map */
