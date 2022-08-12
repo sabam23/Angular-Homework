@@ -8,6 +8,7 @@ import { FormComponent } from './form/form.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { CurrencyConverterComponent } from './currency-converter/currency-converter.component';
 import { EmployeeFormComponent } from './employee-form/employee-form.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { EmployeeFormComponent } from './employee-form/employee-form.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

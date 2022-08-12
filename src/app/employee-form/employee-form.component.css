@@ -38,15 +38,15 @@
 
 .employeeTable {
   width: 1400px;
-  border: solid black 1px;
   margin: 50px auto;
   border-collapse: collapse;
   text-align: center;
   background: #373535;
   color: white;
+  border-radius: 12px;
 }
 .employeeTable td, .employeeTable th {
-  border: solid black 1px;
+  border: solid #4d4949 1px;
   font-family: monospace;
   font-size: 16px;
   padding-top: 12px;
@@ -57,6 +57,9 @@
   font-size: 22px;
   font-weight: 900;
   border: none;
+}
+.employeeTable tr:hover:not(:first-child) {
+  background: #4c4b4b;
 }
 
 .updateBtn {

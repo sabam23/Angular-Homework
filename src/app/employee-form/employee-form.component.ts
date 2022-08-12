@@ -38,11 +38,16 @@ export class EmployeeFormComponent implements OnInit {
     this.employeeForm.reset();
   }
   employeeID: number = 0;
+
   update(id:number) {
     this.employeeService.getEmployeeData(id).subscribe(data => {
       this.employeeID = data.id;
+      this.employeeForm.get('name')?.setValue(data.name);
+      this.employeeForm.get('salary')?.setValue(data.salary);
+      this.employeeForm.get('age')?.setValue(data.age);
     })
     this.checker = false;
+
   }
 
   editEmployee() {
@@ -65,7 +70,11 @@ export class EmployeeFormComponent implements OnInit {
 
   cancel(){
     this.checker = true;
+    this.employeeForm.reset();
   }
+
+  pages: number = 1;
+  dataset: any[] = ['1','2','3','4','5','6','7','8','9','10'];
 
   constructor(private employeeService: EmployeeApiService) { }
 
@@ -73,6 +82,5 @@ export class EmployeeFormComponent implements OnInit {
     this.employeeService.getFullData().subscribe(data => {
       this.employeesDB = data;
     });
-
   }
 }

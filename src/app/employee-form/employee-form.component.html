@@ -8,7 +8,7 @@
     <label>
       Salary:
       <br>
-      <input type="number" formControlName="salary" (keypress)="keyPressNumbersWithDecimal($event)">
+      <input type="number" formControlName="salary" (keypress)="keyPressNumbersWithDecimal($event)" min="0">
     </label>
     <label>
       Age:
@@ -20,7 +20,7 @@
     <a *ngIf="checker===false" (click)="cancel()" style="color: blue;cursor: pointer">Cancel</a>
   </form>
 </div>
-
+<pagination-controls (pageChange)="pages = $event"></pagination-controls>
 <table *ngIf="employeesDB.length" class="employeeTable">
   <tr>
     <th>Id</th>
@@ -29,7 +29,7 @@
     <th>Age</th>
   </tr>
 
-  <ng-container *ngFor="let employee of employeesDB">
+  <ng-container *ngFor="let employee of employeesDB | paginate: {itemsPerPage:5, currentPage:pages}">
     <tr>
       <td>{{employee.id}}</td>
       <td>{{employee.name}}</td>
@@ -39,3 +39,5 @@
     </tr>
   </ng-container>
 </table>
+
+
