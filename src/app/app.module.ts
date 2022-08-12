@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { FormComponent } from './form/form.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { CurrencyConverterComponent } from './currency-converter/currency-converter.component';
+import { EmployeeFormComponent } from './employee-form/employee-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
-    CurrencyConverterComponent
+    CurrencyConverterComponent,
+    EmployeeFormComponent
   ],
   imports: [
     BrowserModule,

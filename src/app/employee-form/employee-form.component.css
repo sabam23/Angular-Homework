@@ -1,0 +1,38 @@
+.employeeForm {
+  margin: 20px auto;
+  width: 400px;
+}
+.employeeForm > form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace;
+  font-weight: 500;
+  font-size: 17px;
+}
+.employeeForm > form input {
+  width: 250px;
+  height: 35px;
+  border: solid 1px #999999;
+  border-radius: 5px;
+  margin-top: 5px;
+  background-color: #f4fafd;
+  padding-left: 10px;
+  font-size: 16px;
+}
+.employeeForm > form > button {
+  width: 130px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  background-color: #3acc3a;
+  color: #f4fafd;
+  cursor: pointer;
+}
+.employeeForm > form > button:disabled {
+  background: #d7d7d7;
+}
+
+/*# sourceMappingURL=employee-form.component.css.map */

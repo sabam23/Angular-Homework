@@ -1,0 +1,20 @@
+<div class="employeeForm">
+  <form [formGroup]="employeeForm">
+    <label>
+      Name:
+      <br>
+      <input type="text" formControlName="name">
+    </label>
+    <label>
+      Salary:
+      <br>
+      <input type="number" formControlName="salary" (keypress)="keyPressNumbersWithDecimal($event)">
+    </label>
+    <label>
+      Age:
+      <br>
+      <input type="number" formControlName="age" (keypress)="keyPressNumbersWithDecimal($event)">
+    </label>
+    <button class="employee-add-btn" [disabled]="employeeForm.invalid" (click)="onClickPost()">Add Employee</button>
+  </form>
+</div>
