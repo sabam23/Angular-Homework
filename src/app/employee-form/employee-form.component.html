@@ -18,3 +18,21 @@
     <button class="employee-add-btn" [disabled]="employeeForm.invalid" (click)="onClickPost()">Add Employee</button>
   </form>
 </div>
+
+<table *ngIf="employeesDB.length" class="employeeTable">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Salary</th>
+    <th>Age</th>
+  </tr>
+
+  <ng-container *ngFor="let employee of employeesDB">
+    <tr>
+      <td>{{employee.id}}</td>
+      <td>{{employee.name}}</td>
+      <td>{{employee.salary}}$</td>
+      <td>{{employee.age}}</td>
+    </tr>
+  </ng-container>
+</table>

@@ -28,13 +28,17 @@ export class EmployeeFormComponent implements OnInit {
 
   onClickPost() {
     this.employeeService.addData(this.employeeForm.value as unknown as Employee).subscribe();
-    this.employeeForm.reset()
+    this.employeesDB.push(this.employeeForm.value);
+    this.employeeForm.reset();
   }
 
+  employeesDB:any = [];
 
   constructor(private employeeService: EmployeeApiService) { }
 
   ngOnInit(): void {
+    this.employeeService.getData().subscribe(data => {
+      this.employeesDB = data;
+    });
   }
-
 }
