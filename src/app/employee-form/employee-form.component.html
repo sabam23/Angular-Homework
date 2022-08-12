@@ -35,7 +35,7 @@
       <td>{{employee.name}}</td>
       <td>{{employee.salary}} $</td>
       <td>{{employee.age}}</td>
-      <td style="border: none;width: 200px"><button class="updateBtn" (click)="update(employee.id)">Update</button><button class="deleteBtn">Delete</button></td>
+      <td style="border: none;width: 200px"><button class="updateBtn" (click)="update(employee.id)">Update</button><button class="deleteBtn" (click)="delete(employee.id)">Delete</button></td>
     </tr>
   </ng-container>
 </table>

@@ -27,4 +27,8 @@ export class EmployeeApiService {
   updateData(id:number, payload: Employee) {
     return this.http.put(`${this.url}employees/${id}`,payload);
   }
+
+  deleteData(id:number) {
+    return this.http.delete(`${this.url}employees/${id}`);
+  }
 }

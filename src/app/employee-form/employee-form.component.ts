@@ -55,6 +55,14 @@ export class EmployeeFormComponent implements OnInit {
     this.employeeForm.reset();
   }
 
+  delete(id:number) {
+    this.employeeService.deleteData(id).subscribe(data => {
+      this.employeeService.getFullData().subscribe(data => {
+        this.employeesDB = data;
+      });
+    })
+  }
+
   cancel(){
     this.checker = true;
   }
