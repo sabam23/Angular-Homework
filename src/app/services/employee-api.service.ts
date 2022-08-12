@@ -23,4 +23,8 @@ export class EmployeeApiService {
   addData(payload: Employee) {
     return this.http.post(this.url+'employees',payload);
   }
+
+  updateData(id:number, payload: Employee) {
+    return this.http.put(`${this.url}employees/${id}`,payload);
+  }
 }

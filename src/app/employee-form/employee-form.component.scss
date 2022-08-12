@@ -34,6 +34,7 @@
 
       &:disabled {
         background: #d7d7d7;
+        cursor: not-allowed;
       }
     }
   }
@@ -52,8 +53,8 @@
     border: solid black 1px;
     font-family: monospace;
     font-size: 16px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
 
   & th {
@@ -61,5 +62,36 @@
     font-size: 22px;
     font-weight: 900;
     border: none;
+  }
+}
+
+.updateBtn  {
+  width: 70px;
+  height: 30px;
+  border: none;
+  background-color: #3acc3a;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 3px;
+
+  &:hover {
+    background-color: #66e366;
+  }
+}
+
+.deleteBtn {
+  width: 70px;
+  height: 30px;
+  border: none;
+  background-color: #fb0000;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 3px;
+  margin-left: 10px;
+
+  &:hover {
+    background-color: #ea3c3c;
   }
 }

@@ -15,7 +15,9 @@
       <br>
       <input type="number" formControlName="age" (keypress)="keyPressNumbersWithDecimal($event)">
     </label>
-    <button class="employee-add-btn" [disabled]="employeeForm.invalid" (click)="onClickPost()">Add Employee</button>
+    <button class="employee-add-btn" [disabled]="employeeForm.invalid" (click)="onClickPost()" *ngIf="checker">Add Employee</button>
+    <button class="employee-add-btn" [disabled]="employeeForm.invalid" (click)="editEmployee()" *ngIf="checker===false">Update</button>
+    <a *ngIf="checker===false" (click)="cancel()" style="color: blue;cursor: pointer">Cancel</a>
   </form>
 </div>
 
@@ -31,8 +33,9 @@
     <tr>
       <td>{{employee.id}}</td>
       <td>{{employee.name}}</td>
-      <td>{{employee.salary}}$</td>
+      <td>{{employee.salary}} $</td>
       <td>{{employee.age}}</td>
+      <td style="border: none;width: 200px"><button class="updateBtn" (click)="update(employee.id)">Update</button><button class="deleteBtn">Delete</button></td>
     </tr>
   </ng-container>
 </table>

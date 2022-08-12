@@ -26,6 +26,9 @@ export class EmployeeFormComponent implements OnInit {
     return true;
   }
 
+  employeesDB:any = [];
+  checker: boolean = true;
+
   onClickPost() {
     this.employeeService.addData(this.employeeForm.value as unknown as Employee).subscribe(data => {
       this.employeeService.getFullData().subscribe(data => {
@@ -34,8 +37,27 @@ export class EmployeeFormComponent implements OnInit {
     });
     this.employeeForm.reset();
   }
+  employeeID: number = 0;
+  update(id:number) {
+    this.employeeService.getEmployeeData(id).subscribe(data => {
+      this.employeeID = data.id;
+    })
+    this.checker = false;
+  }
 
-  employeesDB:any = [];
+  editEmployee() {
+    this.employeeService.updateData(this.employeeID, this.employeeForm.value as unknown as Employee).subscribe(data => {
+      this.employeeService.getFullData().subscribe(data => {
+        this.employeesDB = data;
+      });
+    });
+    this.checker = true;
+    this.employeeForm.reset();
+  }
+
+  cancel(){
+    this.checker = true;
+  }
 
   constructor(private employeeService: EmployeeApiService) { }
 
@@ -43,8 +65,6 @@ export class EmployeeFormComponent implements OnInit {
     this.employeeService.getFullData().subscribe(data => {
       this.employeesDB = data;
     });
-    this.employeeService.getEmployeeData(4).subscribe(data => {
-      console.log(data);
-    })
+
   }
 }
