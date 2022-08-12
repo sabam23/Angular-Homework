@@ -12,8 +12,12 @@ export class EmployeeApiService {
 
   private url = 'http://localhost:3000/';
 
-  getData(): Observable<any> {
+  getFullData(): Observable<any> {
     return this.http.get(this.url + 'employees');
+  }
+
+  getEmployeeData(id: number): Observable<any> {
+    return this.http.get(`${this.url}employees/${id}`);
   }
 
   addData(payload: Employee) {

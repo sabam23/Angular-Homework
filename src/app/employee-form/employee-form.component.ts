@@ -27,8 +27,11 @@ export class EmployeeFormComponent implements OnInit {
   }
 
   onClickPost() {
-    this.employeeService.addData(this.employeeForm.value as unknown as Employee).subscribe();
-    this.employeesDB.push(this.employeeForm.value);
+    this.employeeService.addData(this.employeeForm.value as unknown as Employee).subscribe(data => {
+      this.employeeService.getFullData().subscribe(data => {
+        this.employeesDB = data;
+      });
+    });
     this.employeeForm.reset();
   }
 
@@ -37,8 +40,11 @@ export class EmployeeFormComponent implements OnInit {
   constructor(private employeeService: EmployeeApiService) { }
 
   ngOnInit(): void {
-    this.employeeService.getData().subscribe(data => {
+    this.employeeService.getFullData().subscribe(data => {
       this.employeesDB = data;
     });
+    this.employeeService.getEmployeeData(4).subscribe(data => {
+      console.log(data);
+    })
   }
 }
