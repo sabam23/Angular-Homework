@@ -76,10 +76,6 @@ export class FormListComponent implements OnInit {
   }
 
   checkUser(userId:number) {
-    if (userId === this.loginService.loggedUserId) {
-      return true;
-    }else {
-      return false;
-    }
+    return userId === this.loginService.loggedUserId;
   }
 }
