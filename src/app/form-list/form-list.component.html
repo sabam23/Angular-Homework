@@ -16,6 +16,11 @@
       <input formControlName="phone">
     </label>
     <label>
+      Salary:
+      <br>
+      <input formControlName="salary" formControlName="salary">
+    </label>
+    <label>
       Website:
       <br>
       <input formControlName="website">
@@ -30,6 +35,7 @@
     <th>Email</th>
     <th>Nickname</th>
     <th>Phone</th>
+    <th>Salary</th>
     <th>Website</th>
   </tr>
 
@@ -38,8 +44,9 @@
       <td>{{user.email}}</td>
       <td>{{user.nickname}}</td>
       <td>{{user.phone}}</td>
+      <td>{{user.salary}}</td>
       <td>{{user.website}}</td>
-      <td><button class="editBtn" (click)="update(user.id)">Edit</button><button class="removeBtn" (click)="delete(user.id)">Remove</button></td>
+      <td *ngIf="checkUser(user.id)"><button class="editBtn" (click)="update(user.id)">Edit</button><button class="removeBtn" (click)="delete(user.id)">Remove</button></td>
     </tr>
   </ng-container>
 </table>

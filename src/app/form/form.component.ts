@@ -5,6 +5,7 @@ import {of} from "rxjs";
 import {Employee, User} from "../item.model";
 import {EmployeeApiService} from "../services/employee-api.service";
 import {UsersService} from "../services/users.service";
+import {LoginService} from "../services/login.service";
 
 
 @Component({
@@ -20,6 +21,7 @@ export class FormComponent implements OnInit {
     nickname: new FormControl('',[Validators.required,
       Validators.pattern('^[a-zA-Z0-9-]*$')
     ]),
+    salary: new FormControl(null, [Validators.required]),
     phone: new FormControl('', [Validators.required, Validators.pattern("^(\\+995\\s?)?((\\([0-9]{3}\\))|[0-9]{3})[\\s\\-]?[0-9]{2}[\\s\\-]?[0-9]{2}[\\s\\-]?[0-9]{2}$")]),
     website: new FormControl('', [Validators.required,
       Validators.pattern("(https?:\\/\\/)?(www\\.)[-a-zA-Z0-9@:%._\\+~#=]{2,256}\\.[a-z]{2,4}\\b([-a-zA-Z0-9@:%_\\+.~#?&//=]*)|(https?:\\/\\/)?(www\\.)?(?!ww)[-a-zA-Z0-9@:%._\\+~#=]{2,256}\\.[a-z]{2,4}\\b([-a-zA-Z0-9@:%_\\+.~#?&//=]*)")
@@ -28,7 +30,7 @@ export class FormComponent implements OnInit {
   }, {validators: passwordValidator});
   users: any = [];
 
-  constructor(private usersService: UsersService) { }
+  constructor(private usersService: UsersService,private loginService: LoginService) { }
 
   ngOnInit(): void {
   }

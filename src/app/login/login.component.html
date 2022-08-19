@@ -4,7 +4,7 @@
 
 <div class="loginContainer" *ngIf="formReg">
   <div>Already A user?</div>
-  <input (click)="formReg=false" class="logBtn" value="Log In" type="button">
+  <input (click)="getData()" class="logBtn" value="Log In" type="button" >
 </div>
 
 <div class="container" *ngIf="formReg===false">
@@ -19,7 +19,6 @@
       <br>
       <input type="password" formControlName="password">
     </label>
-    <p>{{errMsg}}</p>
     <button [disabled]="loginForm.invalid" routerLink="/users" class="logBtn" (click)="onClickLogIn()">Log In</button>
   </form>
 </div>

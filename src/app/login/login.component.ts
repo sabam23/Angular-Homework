@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {passwordValidator} from "../password-validator";
 import {UsersService} from "../services/users.service";
+import {LoginService} from "../services/login.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -10,7 +12,7 @@ import {UsersService} from "../services/users.service";
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private usersService: UsersService) { }
+  constructor(private usersService: UsersService,private loginService: LoginService, private router: Router) { }
 
   formReg = true;
 
@@ -25,16 +27,31 @@ export class LoginComponent implements OnInit {
     });
   }
   users: any = [];
-  errMsg:string = '';
+
+
+  getData() {
+    this.usersService.getFullData().subscribe(data => {
+      this.users = data;
+    });
+    this.formReg=false;
+  }
+
   onClickLogIn() {
     for(let user of this.users){
       if(this.loginForm.get('email')?.value === user.email) {
         if (user.password === this.loginForm.get('password')?.value) {
-          this.errMsg = 'Correct';
-        } else {
-          this.errMsg = 'Password Is Incorrect!';
+          this.loginService.isLoggedIn = true;
+          this.loginService.loggedUserId = user.id;
+          this.loginService.loginPage = false;
+          if(user.salary > 400) {
+            this.loginService.currencyCheck = true;
+          }
+          this.router.navigate(['/users']);
+        }else {
+          console.log('Invalid')
         }
       }
     }
   }
+
 }

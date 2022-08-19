@@ -6,19 +6,25 @@ import {FormListComponent} from "./form-list/form-list.component";
 import {LoginComponent} from "./login/login.component";
 import {CurrencyConverterComponent} from "./currency-converter/currency-converter.component";
 import {EmployeeFormComponent} from "./employee-form/employee-form.component";
+import {LoginGuard} from "./Guards/login.guard";
+import {LogPageGuard} from "./Guards/log-page.guard";
+import {CurrencyGuard} from "./Guards/currency.guard";
 
 const routes: Routes = [
   {
   path: 'login',
-  component: LoginComponent
+  component: LoginComponent,
+  canActivate: [LogPageGuard]
   },
   {
     path: 'users',
-    component: FormListComponent
+    component: FormListComponent,
+    canActivate: [LoginGuard]
   },
   {
     path: 'currency',
-    component: CurrencyConverterComponent
+    component: CurrencyConverterComponent,
+    canActivate: [CurrencyGuard]
   },
   {
     path: 'employee',

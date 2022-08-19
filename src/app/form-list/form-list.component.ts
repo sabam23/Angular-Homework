@@ -4,6 +4,7 @@ import {UsersService} from "../services/users.service";
 import {Employee} from "../item.model";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {passwordValidator} from "../password-validator";
+import {LoginService} from "../services/login.service";
 
 @Component({
   selector: 'app-form-list',
@@ -21,13 +22,14 @@ export class FormListComponent implements OnInit {
     nickname: new FormControl('',[Validators.required,
       Validators.pattern('^[a-zA-Z0-9-]*$')
     ]),
+    salary: new FormControl(null, [Validators.required]),
     phone: new FormControl('', [Validators.required, Validators.pattern("^(\\+995\\s?)?((\\([0-9]{3}\\))|[0-9]{3})[\\s\\-]?[0-9]{2}[\\s\\-]?[0-9]{2}[\\s\\-]?[0-9]{2}$")]),
     website: new FormControl('', [Validators.required,
       Validators.pattern("(https?:\\/\\/)?(www\\.)[-a-zA-Z0-9@:%._\\+~#=]{2,256}\\.[a-z]{2,4}\\b([-a-zA-Z0-9@:%_\\+.~#?&//=]*)|(https?:\\/\\/)?(www\\.)?(?!ww)[-a-zA-Z0-9@:%._\\+~#=]{2,256}\\.[a-z]{2,4}\\b([-a-zA-Z0-9@:%_\\+.~#?&//=]*)")
     ])
   }, {validators: passwordValidator});
 
-  constructor(private usersService: UsersService) {}
+  constructor(private usersService: UsersService,private loginService: LoginService) {}
 
   ngOnInit(): void {
     this.usersService.getFullData().subscribe(data => {
@@ -63,6 +65,7 @@ export class FormListComponent implements OnInit {
       this.forms.get('website')?.setValue(data.website);
       this.forms.get('confirmPassword')?.setValue(data.confirmPassword);
       this.forms.get('password')?.setValue(data.password);
+      this.forms.get('salary')?.setValue(data.salary);
     })
     this.checker = true;
   }
@@ -70,5 +73,13 @@ export class FormListComponent implements OnInit {
   cancel(){
     this.checker = false;
     this.forms.reset();
+  }
+
+  checkUser(userId:number) {
+    if (userId === this.loginService.loggedUserId) {
+      return true;
+    }else {
+      return false;
+    }
   }
 }
