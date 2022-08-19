@@ -5,7 +5,7 @@
 .form-container > form {
   display: flex;
   flex-direction: column;
-  row-gap: 25px;
+  row-gap: 20px;
   justify-content: center;
   align-items: center;
   font-family: monospace;
@@ -23,50 +23,12 @@
   background: #1890ff;
   border: none;
   border-radius: 4px;
-  width: 100px;
-  height: 40px;
+  width: 160px;
+  height: 50px;
   color: white;
 }
 .form-container > form > button:disabled {
   background: #dfdfdf;
-}
-
-.users {
-  width: 1400px;
-  border: solid black 1px;
-  margin: 50px auto;
-  border-collapse: collapse;
-  text-align: center;
-  background: #373535;
-  color: white;
-}
-.users td, .users tr, .users th {
-  border: solid black 1px;
-  font-family: monospace;
-  font-size: 16px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-.editBtn {
-  background-color: #3acc3a;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  width: 70px;
-  height: 30px;
-  font-size: 15px;
-}
-
-.removeBtn {
-  background-color: red;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  width: 70px;
-  height: 30px;
-  font-size: 15px;
-  margin-left: 4px;
 }
 
 /*# sourceMappingURL=form.component.css.map */

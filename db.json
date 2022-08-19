@@ -31,9 +31,9 @@
       "id": 5
     },
     {
-      "name": "Kate",
-      "salary": 2000,
-      "age": 22,
+      "name": "Catherine",
+      "salary": 4000,
+      "age": 37,
       "id": 7
     },
     {
@@ -41,12 +41,6 @@
       "salary": 5000,
       "age": 32,
       "id": 8
-    },
-    {
-      "name": "Robert",
-      "salary": 1500,
-      "age": 36,
-      "id": 9
     },
     {
       "name": "Holden",
@@ -74,21 +68,116 @@
     },
     {
       "name": "Zaza Pachulia",
-      "salary": 17000,
+      "salary": 19000,
       "age": 43,
       "id": 14
     },
     {
-      "name": "Wilt Chambarlain",
-      "salary": 500000,
-      "age": 67,
-      "id": 15
+      "name": "Heisenberg",
+      "salary": 80000000,
+      "age": 53,
+      "id": 18
     },
     {
-      "name": "Saba",
-      "salary": 30000,
-      "age": 19,
-      "id": 17
+      "name": "Yaru",
+      "salary": 9000,
+      "age": 12,
+      "id": 19
+    },
+    {
+      "name": "Tutu",
+      "salary": 15000,
+      "age": 15,
+      "id": 20
+    }
+  ],
+  "users": [
+    {
+      "email": "sabamchedlishvili17@gmail.com",
+      "password": "sabasaba",
+      "confirmPassword": "sabasaba",
+      "nickname": "kcanarvin",
+      "phone": "+995551318090",
+      "website": "saba.com",
+      "id": 1
+    },
+    {
+      "email": "yyy@gmail.com",
+      "password": "sabasaba",
+      "confirmPassword": "sabasaba",
+      "nickname": "yyy",
+      "phone": "+995551701909",
+      "website": "yyy.www",
+      "checkbox": true,
+      "id": 4
+    },
+    {
+      "email": "user@gmail.com",
+      "password": "useruser",
+      "confirmPassword": "useruser",
+      "nickname": "user12",
+      "phone": "+995551808909",
+      "website": "user.com",
+      "checkbox": true,
+      "id": 6
+    },
+    {
+      "email": "user15@gmail.com",
+      "password": "sabasaba",
+      "confirmPassword": "sabasaba",
+      "nickname": "user15",
+      "phone": "+995551318090",
+      "website": "saba.com",
+      "checkbox": true,
+      "id": 7
+    },
+    {
+      "email": "login@gmail.com",
+      "password": "loginlogin",
+      "confirmPassword": "loginlogin",
+      "nickname": "login",
+      "phone": "+995444604504",
+      "website": "fff.com",
+      "id": 8
+    },
+    {
+      "email": "pele@gmail.com",
+      "password": "pelepele",
+      "confirmPassword": "pelepele",
+      "nickname": "pele1000",
+      "phone": "+995100100100",
+      "website": "pele.org",
+      "id": 9
+    },
+    {
+      "email": "ronaldo@gmail.com",
+      "password": "ronaldoronaldo",
+      "confirmPassword": "ronaldoronaldo",
+      "nickname": "ronaldo",
+      "phone": "+995777777777",
+      "website": "cr7.com",
+      "checkbox": true,
+      "id": 11
+    },
+    {
+      "email": "oop@gmail.com",
+      "password": "oopoop1",
+      "confirmPassword": "oopoop1",
+      "nickname": "oop",
+      "phone": "+995551707707",
+      "website": "oop.comn",
+      "checkbox": true,
+      "id": 12
+    },
+    {
+      "email": "rara@gmail.co",
+      "password": "rararara",
+      "confirmPassword": "rararara",
+      "nickname": "rara",
+      "phone": "+995551000000",
+      "website": "rara.ra",
+      "checkbox": true,
+      "id": 13
     }
   ]
 }

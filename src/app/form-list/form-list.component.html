@@ -1,0 +1,46 @@
+<div class="form-container" *ngIf="checker">
+  <form [formGroup]="forms">
+    <label>
+      E-mail:
+      <br>
+      <input formControlName="email" id="email" type="email">
+    </label>
+    <label>
+      Nickname:
+      <br>
+      <input formControlName="nickname">
+    </label>
+    <label>
+      Phone:
+      <br>
+      <input formControlName="phone">
+    </label>
+    <label>
+      Website:
+      <br>
+      <input formControlName="website">
+    </label>
+    <button class="employee-add-btn"  (click)="editEmployee()" *ngIf="checker" [disabled]="forms.invalid" >Update</button>
+    <a *ngIf="checker" (click)="cancel()" style="color: red;cursor: pointer">Cancel</a>
+  </form>
+</div>
+
+<table class="users">
+  <tr>
+    <th>Email</th>
+    <th>Nickname</th>
+    <th>Phone</th>
+    <th>Website</th>
+  </tr>
+
+  <ng-container *ngFor="let user of users">
+    <tr>
+      <td>{{user.email}}</td>
+      <td>{{user.nickname}}</td>
+      <td>{{user.phone}}</td>
+      <td>{{user.website}}</td>
+      <td><button class="editBtn" (click)="update(user.id)">Edit</button><button class="removeBtn" (click)="delete(user.id)">Remove</button></td>
+    </tr>
+  </ng-container>
+</table>
+<router-outlet></router-outlet>

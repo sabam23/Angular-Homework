@@ -30,30 +30,11 @@
       <br>
       <input formControlName="website">
     </label>
-    <label *ngIf="checker">
+    <label>
       <input type="checkbox" formControlName="checkbox" >
       I have read the agreement
     </label>
-    <button [disabled]="forms.invalid" (click)="onClick()" *ngIf="checker">Register</button>
-    <button  *ngIf="checkerV" (click)="update()">Update</button>
+    <button [disabled]="forms.invalid" routerLink="/users" (click)="onClick()" >Register</button>
   </form>
 </div>
-<table class="users" *ngIf="users.length">
-  <tr>
-    <th>Email</th>
-    <th>Nickname</th>
-    <th>Phone</th>
-    <th>Website</th>
-  </tr>
-
-    <ng-container *ngFor="let user of users">
-      <tr>
-        <td>{{user.email}}</td>
-        <td>{{user.nickname}}</td>
-        <td>{{user.phone}}</td>
-       <td>{{user.website}}</td>
-        <td><button class="editBtn" (click)="edit(users.indexOf(user))">Edit</button><button class="removeBtn" (click)="remove(users.indexOf(user))" >Remove</button></td>
-      </tr>
-
-    </ng-container>
-</table>
+<router-outlet></router-outlet>

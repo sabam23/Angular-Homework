@@ -39,7 +39,7 @@ export class EmployeeFormComponent implements OnInit {
   }
   employeeID: number = 0;
 
-  update(id:number) {
+   update(id:number) {
     this.employeeService.getEmployeeData(id).subscribe(data => {
       this.employeeID = data.id;
       this.employeeForm.get('name')?.setValue(data.name);
@@ -47,7 +47,6 @@ export class EmployeeFormComponent implements OnInit {
       this.employeeForm.get('age')?.setValue(data.age);
     })
     this.checker = false;
-
   }
 
   editEmployee() {

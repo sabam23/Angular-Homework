@@ -1,0 +1,27 @@
+.top-bar {
+  height: 55px;
+  background: #4d4949;
+  box-sizing: border-box;
+  display: flex;
+  border-radius: 3px;
+  margin-bottom: 40px;
+  position: sticky;
+  top: 0;
+}
+.top-bar > div {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+}
+.top-bar > div:hover {
+  background: #d7d7d7;
+  color: black;
+  border-bottom: red solid 5px;
+  border-radius: 3px;
+}
+
+/*# sourceMappingURL=topbar.component.css.map */

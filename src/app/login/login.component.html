@@ -1,0 +1,32 @@
+<ng-container *ngIf="formReg">
+  <app-form></app-form>
+</ng-container>
+
+<div class="loginContainer" *ngIf="formReg">
+  <div>Already A user?</div>
+  <input (click)="formReg=false" class="logBtn" value="Log In" type="button">
+</div>
+
+<div class="container" *ngIf="formReg===false">
+  <form class="loginForm"  [formGroup]="loginForm">
+    <label>
+      Email:
+      <br>
+      <input type="email" formControlName="email">
+    </label>
+    <label>
+      Password:
+      <br>
+      <input type="password" formControlName="password">
+    </label>
+    <p>{{errMsg}}</p>
+    <button [disabled]="loginForm.invalid" routerLink="/users" class="logBtn" (click)="onClickLogIn()">Log In</button>
+  </form>
+</div>
+
+<div class="loginContainer" *ngIf="formReg===false">
+  <div>Or</div>
+  <button class="logBtn" *ngIf="formReg===false" (click)="formReg=true">Register</button>
+</div>
+
+<router-outlet></router-outlet>

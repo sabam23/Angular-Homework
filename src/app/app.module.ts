@@ -9,13 +9,19 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { CurrencyConverterComponent } from './currency-converter/currency-converter.component';
 import { EmployeeFormComponent } from './employee-form/employee-form.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FormListComponent } from './form-list/form-list.component';
+import { LoginComponent } from './login/login.component';
+import { TopbarComponent } from './topbar/topbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
     CurrencyConverterComponent,
-    EmployeeFormComponent
+    EmployeeFormComponent,
+    FormListComponent,
+    LoginComponent,
+    TopbarComponent
   ],
   imports: [
     BrowserModule,

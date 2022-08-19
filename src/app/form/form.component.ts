@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import {passwordValidator} from "../password-validator";
 import {of} from "rxjs";
+import {Employee, User} from "../item.model";
+import {EmployeeApiService} from "../services/employee-api.service";
+import {UsersService} from "../services/users.service";
 
 
 @Component({
@@ -24,34 +27,17 @@ export class FormComponent implements OnInit {
     checkbox: new FormControl('', [ Validators.requiredTrue])
   }, {validators: passwordValidator});
   users: any = [];
-  checker = true;
-  checkerV = false;
-  constructor() { }
+
+  constructor(private usersService: UsersService) { }
 
   ngOnInit(): void {
   }
 
-  public remove(index: any): void {
-    this.users.splice(index,1);
-  }
-
-  public edit(index: any): void {
-    this.checker = false;
-    this.checkerV =true;
-    for (let i in this.users[index]) {
-      if (this.users[index][i] === '') {
-        this.users[index] = this.forms.value;
-      }
-    }
-    this.update();
-  }
-
-  public update() {
-
-  }
-
   public onClick(): void {
-    this.users.push(this.forms.value);
+    this.usersService.addData(this.forms.value as User).subscribe();
+    this.usersService.getFullData().subscribe(data => {
+      this.users = data;
+    });
     this.forms.reset();
   }
 }
