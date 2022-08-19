@@ -3,5 +3,5 @@
   <div routerLink="/currency" *ngIf="loginService.currencyCheck"><a>Currency</a></div>
   <div routerLink="/users" *ngIf="loginService.isLoggedIn"><a>Users</a></div>
   <div routerLink="/login" *ngIf="loginService.loginPage"><a>Log In</a></div>
-  <div routerLink="/" *ngIf="loginService.isLoggedIn" (click)="logOut()"><a>Log Out</a></div>
+  <div routerLink="/login" *ngIf="loginService.isLoggedIn" (click)="logOut()"><a>Log Out</a></div>
 </div>

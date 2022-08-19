@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { FormComponent } from './form/form.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { CurrencyConverterComponent } from './currency-converter/currency-converter.component';
-import { EmployeeFormComponent } from './employee-form/employee-form.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormListComponent } from './form-list/form-list.component';
 import { LoginComponent } from './login/login.component';
@@ -18,7 +17,6 @@ import { TopbarComponent } from './topbar/topbar.component';
     AppComponent,
     FormComponent,
     CurrencyConverterComponent,
-    EmployeeFormComponent,
     FormListComponent,
     LoginComponent,
     TopbarComponent

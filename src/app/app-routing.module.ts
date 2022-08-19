@@ -5,7 +5,7 @@ import {AppComponent} from "./app.component";
 import {FormListComponent} from "./form-list/form-list.component";
 import {LoginComponent} from "./login/login.component";
 import {CurrencyConverterComponent} from "./currency-converter/currency-converter.component";
-import {EmployeeFormComponent} from "./employee-form/employee-form.component";
+import {EmployeeFormComponent} from "./employees/employee-form/employee-form.component";
 import {LoginGuard} from "./Guards/login.guard";
 import {LogPageGuard} from "./Guards/log-page.guard";
 import {CurrencyGuard} from "./Guards/currency.guard";
@@ -28,7 +28,7 @@ const routes: Routes = [
   },
   {
     path: 'employee',
-    component: EmployeeFormComponent
+    loadChildren: () => import('./employees/employees.module').then(m => m.EmployeesModule)
   }
   ];
 

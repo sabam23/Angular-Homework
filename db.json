@@ -181,11 +181,21 @@
       "email": "georgia@gmail.com",
       "password": "sabasaba",
       "confirmPassword": "sabasaba",
-      "nickname": "georgia",
+      "nickname": "georgia1121",
       "salary": "1",
       "phone": "+995777777777",
       "website": "georgia.ge",
       "id": 9
+    },
+    {
+      "email": "bale@gmail.com",
+      "password": "balebale",
+      "confirmPassword": "balebale",
+      "nickname": "bale11",
+      "salary": 60000000,
+      "phone": "+995551318090",
+      "website": "garethbale.wa",
+      "id": 10
     }
   ]
 }
