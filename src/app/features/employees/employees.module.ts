@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {EmployeeFormComponent} from "./employee-form/employee-form.component";
+import {EmployeeFormComponent} from "./components/employee-form/employee-form.component";
 import {NgxPaginationModule} from "ngx-pagination";
 import {ReactiveFormsModule} from "@angular/forms";
 import {EmployeeRoutingModule} from "./employee-routing.module";
+import { SharedModule } from 'src/app/shared/shared.module';
+
 
 
 
@@ -15,7 +17,8 @@ import {EmployeeRoutingModule} from "./employee-routing.module";
     CommonModule,
     NgxPaginationModule,
     ReactiveFormsModule,
-    EmployeeRoutingModule
+    EmployeeRoutingModule,
+    SharedModule
   ]
 })
 export class EmployeesModule { }

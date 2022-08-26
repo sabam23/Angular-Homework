@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {FormComponent} from "../form/form.component";
-import {UsersService} from "../services/users.service";
-import {Employee} from "../item.model";
+import {UsersService} from "../../services/users.service";
+import { Employee } from '../../interfaces/employee.interface';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {passwordValidator} from "../password-validator";
-import {LoginService} from "../services/login.service";
+import { passwordValidator } from 'src/app/core/validators/password-validator';
+import {LoginService} from "../../services/login.service";
 
 @Component({
   selector: 'app-form-list',

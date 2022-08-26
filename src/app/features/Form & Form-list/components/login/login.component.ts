@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {passwordValidator} from "../password-validator";
-import {UsersService} from "../services/users.service";
-import {LoginService} from "../services/login.service";
+import { passwordValidator } from 'src/app/core/validators/password-validator';
+import {UsersService} from "../../services/users.service";
+import {LoginService} from "../../services/login.service";
 import {Router} from "@angular/router";
 
 @Component({

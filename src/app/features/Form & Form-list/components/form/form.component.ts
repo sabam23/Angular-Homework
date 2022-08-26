@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
-import {passwordValidator} from "../password-validator";
+import { passwordValidator } from 'src/app/core/validators/password-validator';
 import {of} from "rxjs";
-import {Employee, User} from "../item.model";
-import {EmployeeApiService} from "../services/employee-api.service";
-import {UsersService} from "../services/users.service";
-import {LoginService} from "../services/login.service";
+import { User } from '../../interfaces/user.interface';
+import { Employee } from '../../interfaces/employee.interface';
+import {EmployeeApiService} from "../../../employees/services/employee-api.service";
+import {UsersService} from "../../services/users.service";
+import {LoginService} from "../../services/login.service";
 
 
 @Component({

@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {FormComponent} from "./form/form.component";
+import {FormComponent} from "./features/Form & Form-list/components/form/form.component";
 import {AppComponent} from "./app.component";
-import {FormListComponent} from "./form-list/form-list.component";
-import {LoginComponent} from "./login/login.component";
-import {CurrencyConverterComponent} from "./currency-converter/currency-converter.component";
-import {EmployeeFormComponent} from "./employees/employee-form/employee-form.component";
-import {LoginGuard} from "./Guards/login.guard";
-import {LogPageGuard} from "./Guards/log-page.guard";
-import {CurrencyGuard} from "./Guards/currency.guard";
+import {FormListComponent} from "./features/Form & Form-list/components/form-list/form-list.component";
+import {LoginComponent} from "./features/Form & Form-list/components/login/login.component";
+import {CurrencyConverterComponent} from "./features/currency-converter/components/currency-converter.component";
+import {EmployeeFormComponent} from "./features/employees/components/employee-form/employee-form.component";
+import {LoginGuard} from "./core/Guards/login.guard";
+import {LogPageGuard} from "./core/Guards/log-page.guard";
+import {CurrencyGuard} from "./core/Guards/currency.guard";
 
 const routes: Routes = [
   {
@@ -28,7 +28,7 @@ const routes: Routes = [
   },
   {
     path: 'employee',
-    loadChildren: () => import('./employees/employees.module').then(m => m.EmployeesModule)
+    loadChildren: () => import('./features/employees/employees.module').then(m => m.EmployeesModule)
   }
   ];
 
