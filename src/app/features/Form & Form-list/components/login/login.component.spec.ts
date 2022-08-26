@@ -1,4 +1,8 @@
+import {HttpClientModule  } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Router, RouterModule } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
+
 
 import { LoginComponent } from './login.component';
 
@@ -8,7 +12,9 @@ describe('LoginComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoginComponent ]
+      declarations: [ LoginComponent ],
+      providers: [HttpClientModule ],
+      imports: [RouterTestingModule,HttpClientModule]
     })
     .compileComponents();
 
@@ -20,4 +26,9 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should turn formReg to false',()=> {
+    component.getData();
+    expect(component.formReg).toEqual(false);
+  })
 });

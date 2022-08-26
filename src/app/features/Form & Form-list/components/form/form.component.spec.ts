@@ -1,5 +1,6 @@
+import { HttpClient, HttpHandler } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { UsersService } from '../../services/users.service';
 import { FormComponent } from './form.component';
 
 describe('FormComponent', () => {
@@ -8,7 +9,8 @@ describe('FormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FormComponent ]
+      declarations: [ FormComponent ],
+      providers: [HttpClient,HttpHandler,UsersService]
     })
     .compileComponents();
 

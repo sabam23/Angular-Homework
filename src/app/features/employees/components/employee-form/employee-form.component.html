@@ -8,12 +8,12 @@
     <label>
       Salary:
       <br>
-      <input type="number" formControlName="salary" (keypress)="keyPressNumbersWithDecimal($event)" min="0">
+      <input type="number" formControlName="salary"  min="0">
     </label>
     <label>
       Age:
       <br>
-      <input type="number" formControlName="age" (keypress)="keyPressNumbersWithDecimal($event)">
+      <input type="number" formControlName="age">
     </label>
     <button class="employee-add-btn" [disabled]="employeeForm.invalid" (click)="onClickPost()" *ngIf="checker">Add Employee</button>
     <button class="employee-add-btn" [disabled]="employeeForm.invalid" (click)="editEmployee()" *ngIf="checker===false">Update</button>

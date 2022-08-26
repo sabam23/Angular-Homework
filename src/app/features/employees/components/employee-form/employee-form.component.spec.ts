@@ -1,3 +1,4 @@
+import { HttpClient, HttpHandler } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EmployeeFormComponent } from './employee-form.component';
@@ -8,7 +9,8 @@ describe('EmployeeFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EmployeeFormComponent ]
+      declarations: [ EmployeeFormComponent ],
+      providers: [HttpClient,HttpHandler]
     })
     .compileComponents();
 
@@ -17,7 +19,14 @@ describe('EmployeeFormComponent', () => {
     fixture.detectChanges();
   });
 
+  
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should turn checker to true and reset form',() => {
+    component.cancel();
+    expect(component.checker).toEqual(true);
+  })
+
 });

@@ -1,3 +1,4 @@
+import {  HttpClientModule  } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FormListComponent } from './form-list.component';
@@ -8,7 +9,8 @@ describe('FormListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FormListComponent ]
+      declarations: [ FormListComponent ],
+      imports: [HttpClientModule]
     })
     .compileComponents();
 
@@ -20,4 +22,19 @@ describe('FormListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should turn checker false and reset forms', ()=> {
+    component.editEmployee();
+    expect(component.checker).toEqual(false);
+  })
+
+  it('should turn checker true', ()=> {
+    component.update(1);
+    expect(component.checker).toEqual(true);
+  })
+
+  it('should turn checker to true and reset form',() => {
+    component.cancel();
+    expect(component.checker).toEqual(false);
+  })
 });

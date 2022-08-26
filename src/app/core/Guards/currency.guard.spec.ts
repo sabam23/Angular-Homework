@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-
+import { ActivatedRouteSnapshot,RouterStateSnapshot } from '@angular/router';
 import { CurrencyGuard } from './currency.guard';
 
 describe('CurrencyGuard', () => {
